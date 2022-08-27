@@ -10,6 +10,8 @@ startBtn.addEventListener("click", start);
 stopBtn.addEventListener("click", stop);
 resetBtn.addEventListener("click", reset);
 
+stopBtn.disabled = true;
+
 function start(){
   startBtn.classList.add("active");
   stopBtn.classList.remove("stopActive");
@@ -55,6 +57,8 @@ function stop(){
 function reset(){
   startBtn.classList.remove("active");
   stopBtn.classList.remove("stopActive");
+  startBtn.disabled = false;
+  stopBtn.disabled = true;
   clearInterval(startTimer);
   hr = min = sec = ms = "0"+ 0
   putValue();
