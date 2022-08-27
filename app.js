@@ -13,6 +13,8 @@ resetBtn.addEventListener("click", reset);
 function start(){
   startBtn.classList.add("active");
   stopBtn.classList.remove("stopActive");
+  startBtn.disabled = true;
+  stopBtn.disabled = false;
   
 
   startTimer = setInterval(()=>{
@@ -46,6 +48,8 @@ function stop(){
   startBtn.classList.remove("active");
   stopBtn.classList.add("stopActive");
   clearInterval(startTimer);
+  startBtn.disabled=false;
+  stopBtn.disabled = true;
 }
 
 function reset(){
